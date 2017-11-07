@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>三个入口函数的区别</title>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			//第一种方式：先文档加载完毕，图片不加载的时候就能执行这个函数了
+//			$(document).ready(function(){
+//				alert(1);
+//			})
+			
+			//第二种方式:和第一种一样也是文档加载完毕，图片不加载的时候执行这个函数
+//			$(function(){
+//				alert(1);
+//			})
+//			
+			//第三种方式：文档加载完毕，图片也加载完毕的时候执行
+			$(window).ready(function(){
+				alert(1);
+			})
+			
+			//原生js:页面所有内容加载完毕之后执行
+//			window.onload=function(){
+//				alert(1);
+//			}
+			
+			//区别：原生js,入口函数只能出现一次，出现多次会存在事件覆盖问题
+		</script>
+	</head>
+	<body>
+		文档
+		<img src="img/mino2.jpg"/>
+	</body>
+</html>

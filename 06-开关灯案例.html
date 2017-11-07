@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			button {
+				margin: 10px;
+			}
+			img {
+				display: block;
+				margin: 10px auto;
+			}
+		</style>
+		
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script>
+			$(window).ready(function(){
+				var btnArr=document.getElementsByTagName("button");
+				var bd=$("body");
+				
+				$(btnArr[0]).click(function(){
+					bd[0].style.backgroundColor="white";
+				});
+				
+				
+				$(btnArr[1]).click(function(){
+					bd.get(0).style.background="rgba(0,0,0,0.3)";
+				})
+			})
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<button>开灯</button>
+		<button>关灯</button>
+		<img src="img/coder.jpg">
+		
+		
+		
+		
+	</body>
+</html>

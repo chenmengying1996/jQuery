@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+			$(document).ready(function(){
+				//find(selector)
+				//必须指定元素，不然获取不到参数
+				//查找指定元素的所有后代，子子孙孙
+				
+				var jqul=$("ul");
+//				console.log(jqul.find());
+				jqul.find("li").css("background","pink");
+				
+				
+				//children()
+				//查找指定参数的直接子元素（亲儿子）
+				//不写参数获取所有子元素
+				
+				jqul.children("li").css("background","green");
+				
+				
+				//eq(索引值)：从jQuery对象的子代中查找该元素的索引值
+				//jqul.children()指ul的所有子元素
+//				console.log(jqul.children());
+				jqul.children().eq(0).css("background","red");
+				
+				//next():钙元素的下一个兄弟节点
+				
+				jqul.children().eq(0).next().css("background","yellow");
+				
+				//siblings(selector):该元素的所有兄弟节点
+				
+				jqul.children().eq(0).next().siblings().css("border","1px solid yellow");
+				
+				//parent():查找父元素（亲生的）
+				console.log(jqul.children().eq(0).parent());
+				
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<span>呵呵</span>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<i>呵呵</i>
+			<li>呵呵</li>
+			<li class="box">呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<a href="#" id="box">呵呵</a>
+			
+			<ol>
+				<li>我是ol的li</li>
+				<li>我是ol的li</li>
+				<li>我是ol的li</li>
+				<li>我是ol的li</li>
+			</ol>
+				
+		</ul>
+	</body>
+</html>

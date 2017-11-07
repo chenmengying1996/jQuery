@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				height: 100px;
+				margin: 10px;
+				background-color: pink;
+				display: none;
+			}
+		</style>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script>
+			$(document).ready(function(){
+				//获取元素
+				var jqbtn=$("button");//根据标签名获取
+				var jqdiv=$("div");//jQuery中直接是用对象表示数组
+				
+				//绑定事件
+				jqbtn.click(function(){
+					jqdiv.show(1000);
+					jqdiv.html("明日中秋");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button>显示盒子和设置内容</button>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

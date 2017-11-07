@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+			jQuery(document).ready(function(){
+				//空格后代选择器：子子孙孙
+				//ul中所有的li
+				var jqli=$("ul li");
+				jqli.css("background","#FFC0CB");
+				jqli.css("margin",5);
+				
+				//>子代选择器，ul的子孙li,只有子代li变红，与孙子li无关
+				var jqotherli=$("ul>li")
+				jqotherli.css("background","red");
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<ol>
+				<li>aaa</li>
+				<li>bbb</li>
+				<li>ccc</li>
+			</ol>
+		</ul>
+		
+	</body>
+</html>

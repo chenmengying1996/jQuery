@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+			$(document).ready(function(){
+				//利用过滤选择器设置偶数位元素的背景
+				//空格代表后代  odd代表偶数位
+				var jqliodd=$("ul li:odd");
+				jqliodd.css("background","#FFC0CB");
+				
+				//空格代表后代  odd代表奇数位
+				var jqlieven=$("ul li:even")
+				jqlieven.css("background","red");				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+		</ul>
+		
+		
+	</body>
+</html>
