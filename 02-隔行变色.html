@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+		<script>
+			$(function(){
+				//需求：隔行变色
+				var jqli1=$("ul li:odd");
+				var jqli2=$("ul li:even");
+				jqli1.css("background","pink");
+				jqli2.css("background","red");
+				
+				//color是计数器，记录鼠标放进li之前，li的背景色
+				var color="";
+				$("li").mouseenter(function(){
+					//css里面一个参数是获取值
+					color=$(this).css("background");
+					$(this).css("background","yellow");
+				});
+				
+				$("li").mouseleave(function(){
+					$(this).css("background",color);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+			<li>呵呵</li>
+		</ul>
+	</body>
+</html>

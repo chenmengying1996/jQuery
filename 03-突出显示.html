@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				background-color: gray;
+			}
+			.wrap {
+				margin: 20px auto 0;
+				width: 615px;
+				height: 378px;
+				border: 1px solid #000000;
+			}
+			ul {
+				list-style: none;
+			}
+			
+			ul li {
+				float: left;
+				margin-right: 5px;
+			}
+		</style>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script>
+			jQuery(window).ready(function(){
+				//需求:鼠标划过li时，li变亮，其他li变暗，当鼠标移开wrap框的时候，透明度都较亮
+				$("li").mouseenter(function(){
+					$(this).css("opacity",1).siblings("li").css("opacity",0.5);
+				});
+				
+				$("li").mouseleave(function(){
+					//空格后代选择器：wrap的所有后代li
+					$(".wrap li").css("opacity",1);
+					
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li><a href="#"><img src="images/01.jpg"></a></li>
+				<li><a href="#"><img src="images/02.jpg"></a></li>
+				<li><a href="#"><img src="images/03.jpg"></a></li>
+				<li><a href="#"><img src="images/04.jpg"></a></li>
+				<li><a href="#"><img src="images/05.jpg"></a></li>
+				<li><a href="#"><img src="images/06.jpg"></a></li>
+			</ul>
+		</div>
+	</body>
+</html>

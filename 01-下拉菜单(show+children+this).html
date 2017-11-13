@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			
+			.wrap {
+				width: 350px;
+				height: 33px;
+				margin: 80px auto 0;
+			}
+			.wrap>ul {
+				width: 350px;
+				height: 33px;
+				background: url(images/bg.jpg) no-repeat;
+			}
+			
+			.wrap>ul>li {
+				width: 100px;
+				height: 30px;
+				text-align: center;
+				line-height: 33px;
+				margin-left: 10px;
+				float: left;
+				border-radius: 5px;
+				background-color: lightskyblue;
+				
+				
+				/*position: relative;*/
+			}
+			
+			.wrap>ul {
+				list-style: none;
+			}
+			
+			.wrap>ul>li>ul {
+				list-style: none;
+				width: 100px;
+				height: 90px;
+				display: none;
+				
+			}
+			
+			.wrap>ul>li>ul>li {
+				width: 100px;
+				height: 30px;
+				background: url(images/libg.jpg) no-repeat;
+				text-align: center;
+				
+			}
+			
+			.wrap a {
+				text-decoration: none;
+				color: #000;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+		<script>
+			$(window).ready(function(){
+				var jqli=$(".wrap>ul>li");
+				jqli.mouseenter(function(){
+					//这个位置用到了this
+//					console.log(this);
+					//让this中的ul显示出来
+					//原生js写法
+//					this.children[1].style.display="block";
+
+					$(this).children("ul").show();
+				});
+				
+				jqli.mouseleave(function(){
+					$(this).children("ul").hide();
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li>
+					<a href="javascript:void(0);">一级菜单1</a>
+					<ul class="wrap-items">
+						<li><a href="javascript:void(0);">二级菜单1</a></li>
+						<li><a href="javascript:void(0);">二级菜单2</a></li>
+						<li><a href="javascript:void(0);">二级菜单3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);">一级菜单2</a>
+					<ul>
+						<li><a href="javascript:void(0);">二级菜单1</a></li>
+						<li><a href="javascript:void(0);">二级菜单2</a></li>
+						<li><a href="javascript:void(0);">二级菜单3</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);">一级菜单3</a>
+					<ul>
+						<li><a href="javascript:void(0);">二级菜单1</a></li>
+						<li><a href="javascript:void(0);">二级菜单2</a></li>
+						<li><a href="javascript:void(0);">二级菜单3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

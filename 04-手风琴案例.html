@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.parentWrap {
+				list-style: none;
+				width: 150px;
+				/*height: 250px;*/
+				/*border: 1px solid #000000;*/
+			}
+			
+			.menuGroup {
+				width: 150px;
+				/*height: 150px;*/
+				border: 1px solid #808080;
+			}
+			
+			.groupTitle {
+				display: block;
+				width: 150px;
+				height: 25px;
+				background-color: lightblue;
+				text-align: center;
+				line-height: 25px;
+				border-bottom: 1px solid #808080;
+				cursor: pointer;
+			}
+			
+			div{
+				display: none;
+				text-align: center;
+				height: 150px;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+		<script>
+			$(document).ready(function(){
+				//需求：鼠标点击span，让他下面的div显示，其他的隐藏
+				$(".groupTitle").click(function(){
+//					$(this).next().show();
+//					$(this).parent("li").siblings("li").children("div").hide();
+					$(this).next().show().parent("li").siblings("li").find("div").hide();
+				});
+				
+				//让其他的隐藏
+				
+			})
+		</script>
+	</head>
+	<body>
+		<ul class="parentWrap">
+			<li class="menuGroup">
+				<span class="groupTitle">标题一</span>
+				<div>我是弹出来的div1</div>
+			</li>
+			<li class="menuGroup">
+				<span class="groupTitle">标题二</span>
+				<div>我是弹出来的div2</div>
+			</li>
+			<li class="menuGroup">
+				<span class="groupTitle">标题三</span>
+				<div>我是弹出来的div3</div>
+			</li>
+			<li class="menuGroup">
+				<span class="groupTitle">标题四</span>
+				<div>我是弹出来的div4</div>
+			</li>
+			
+		</ul>
+	</body>
+</html>
